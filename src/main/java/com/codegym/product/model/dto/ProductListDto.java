@@ -1,18 +1,17 @@
-package com.codegym.product.model.entity;
+package com.codegym.product.model.dto;
 
+import com.codegym.product.model.entity.Category;
+import com.codegym.product.model.entity.Image;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.*;
+import java.util.List;
 
-@Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@NoArgsConstructor
+public class ProductListDto {
     private Long id;
 
     private String name;
@@ -23,8 +22,7 @@ public class Product {
 
     private String description;
 
-    @ManyToOne
     private Category category;
 
-
+    private List<Image> images;
 }

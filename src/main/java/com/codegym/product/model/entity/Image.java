@@ -8,23 +8,21 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Product {
+@NoArgsConstructor
+public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-
-    private double price;
-
-    private int quantity;
-
-    private String description;
+    private String image;
 
     @ManyToOne
-    private Category category;
+    private Product product;
 
 
+    public Image(String image, Product product) {
+        this.image = image;
+        this.product = product;
+    }
 }
